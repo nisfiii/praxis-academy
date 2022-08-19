@@ -1,0 +1,33 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh16000\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \CocoaLigature0 Last login: Fri Aug 19 10:15:45 on ttys000\
+\
+The default interactive shell is now zsh.\
+To update your account to use zsh, please run `chsh -s /bin/zsh`.\
+For more details, please visit https://support.apple.com/kb/HT208050.\
+apples-MacBook-Pro:~ apple$ open /Applications/Safari.app/\
+apples-MacBook-Pro:~ apple$ ls ~ | pbcopy\
+apples-MacBook-Pro:~ apple$ pbcopy < blogpost.txt\
+-bash: blogpost.txt: No such file or directory\
+apples-MacBook-Pro:~ apple$ curl http://www.google.com/doodles#oodles/archive | grep -A5 'latest-doodle on' | grep 'img src' | sed s/.*'<img src="\\/\\/'/''/ | sed s/'" alt=".*'/''/ | pbcopy\
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\
+                                 Dload  Upload   Total   Spent    Left  Speed\
+100  761k  100  761k    0     0   339k      0  0:00:02  0:00:02 --:--:--  339k\
+apples-MacBook-Pro:~ apple$ \
+apples-MacBook-Pro:~ apple$ pbpaste >> tasklist.txt\
+apples-MacBook-Pro:~ apple$ mdfind -onlyin ~/Documents essay\
+apples-MacBook-Pro:~ apple$ screencapture -C -M image.png\
+apples-MacBook-Pro:~ apple$ screencapture -c -W\
+could not create image from window\
+apples-MacBook-Pro:~ apple$ screencapture -T 10 -P image.png\
+apples-MacBook-Pro:~ apple$ screencapture -s -t pdf image.pdf\
+apples-MacBook-Pro:~ apple$ sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist\
+Password:\
+apples-MacBook-Pro:~ apple$ /Library/LaunchAgents\
+-bash: /Library/LaunchAgents: is a directory\
+apples-MacBook-Pro:~ apple$ }
