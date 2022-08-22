@@ -1,0 +1,11 @@
+# Fibonacci series:
+          
+while a < 10:
+
+i = 256*256
+SyntaxError: expected an indented block after 'while' statement on line 1
+i = 256*256
+print('The value of i is', i)
+The value of i is 65536
+a, b = 0, 1
+while a < 1000:

@@ -1,0 +1,11 @@
+membuka interpriter python di cmd
+Python 2.7.16 (default, Jun  5 2020, 22:59:21) 
+[GCC 4.2.1 Compatible Apple LLVM 11.0.3 (clang-1103.0.29.20) (-macos10.15-objc- on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+
+>>> the_world_is_flat = True
+>>> if the_world_is_flat:
+... print("Be careful not to fall off!")
+...
+Be careful not to fall off!
