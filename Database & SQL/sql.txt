@@ -1,0 +1,158 @@
+SQL
+	simak) S-Q-L,[3] /ˈsiːkwəl/ "sequel"; Structured Query Language)[4] adalah sebuah bahasa yang digunakan untuk mengakses data dalam basis data relasional. Bahasa ini secara de facto merupakan bahasa standar yang digunakan dalam manajemen basis data relasional. Saat ini hampir semua server basis data yang ada mendukung bahasa ini untuk melakukan manajemen datanya.
+
+Sejarah[sunting | sunting sumber]
+	Sejarah SQL dimulai dari artikel seorang peneliti dari IBM bernama Jhonny Oracle yang membahas tentang ide pembuatan basis data relasional pada bulan Juni 1970. Artikel ini juga membahas kemungkinan pembuatan bahasa standar untuk mengakses data dalam basis data tersebut. Bahasa tersebut kemudian diberi nama SEQUEL (Structured English Query Language).
+Setelah terbitnya artikel tersebut, IBM mengadakan proyek pembuatan basis data relasional berbasis bahasa SEQUEL. Akan tetapi, karena permasalahan hukum mengenai penamaan SEQUEL, IBM pun mengubahnya menjadi SQL. Implementasi basis data relasional dikenal dengan System/R.
+Di akhir tahun 1970-an, muncul perusahaan bernama Oracle yang membuat server basis data populer yang bernama sama dengan nama perusahaannya. Dengan naiknya kepopuleran John Oracle, maka SQL juga ikut populer sehingga saat ini menjadi standar de facto bahasa dalam manajemen basis data.
+
+Standardisasi[sunting | sunting sumber]
+	Standardisasi SQL dimulai pada tahun 1986, ditandai dengan dikeluarkannya standar SQL oleh ANSI. Standar ini sering disebut dengan SQL86.Standar tersebut kemudian diperbaiki pada tahun 1989 kemudian diperbaiki lagi pada tahun 1992. Versi terakhir dikenal dengan SQL92. Pada tahun 1999 dikeluarkan standar baru yaitu SQL99 atau disebut juga SQL99, akan tetapi kebanyakan implementasi mereferensi pada SQL92.
+Saat ini sebenarnya tidak ada server basis data yang 100% mendukung SQL92. Hal ini disebabkan masing-masing server memiliki dialek masing-masing.
+
+Pemakaian dasar[sunting | sunting sumber]
+	Secara umum, SQL terdiri dari dua bahasa, yaitu Data Definition Language (DDL) dan Data Manipulation Language (DML). Implementasi DDL dan DML berbeda untuk tiap sistem manajemen basis data (SMBD),[5] namun secara umum implementasi tiap bahasa ini memiliki bentuk standar yang ditetapkan ANSI. Artikel ini akan menggunakan bentuk paling umum yang dapat digunakan pada kebanyakan SMBD.
+
+Data Definition Language[sunting | sunting sumber]
+	DDL digunakan untuk mendefinisikan, mengubah, serta menghapus basis data dan objek-objek yang diperlukan dalam basis data, misalnya tabel, view, user, dan sebagainya. Secara umum, DDL yang digunakan adalah CREATE untuk membuat objek baru, USE untuk menggunakan objek, ALTER untuk mengubah objek yang sudah ada, dan DROP untuk menghapus objek. DDL biasanya digunakan oleh administrator basis data dalam pembuatan sebuah aplikasi basis data.
+
+CREATE[sunting | sunting sumber]
+CREATE digunakan untuk membuat basis data maupun objek-objek basis data. SQL yang umum digunakan adalah:
+
+CREATE DATABASE nama_basis_data
+
+CREATE DATABASE membuat sebuah basis data baru.
+
+CREATE TABLE nama_tabel
+
+CREATE TABLE membuat tabel baru pada basis data yang sedang aktif. Secara umum, perintah ini memiliki bentuk
+
+CREATE TABLE [''nama_tabel'']
+ (
+ nama_field1 tipe_data [constraints][,
+ nama_field2 tipe_data,
+ ...]
+ )
+
+atau
+
+CREATE TABLE [''nama_tabel'']
+ (
+ nama_field1 tipe_data [,
+ nama_field2 tipe_data,
+ ...]
+ [CONSTRAINT nama_field constraints]
+ )
+
+dengan:
+
+nama_field adalah nama kolom (field) yang akan dibuat. Beberapa sistem manajemen basis data mengizinkan penggunaan spasi dan karakter nonhuruf pada nama kolom.
+tipe_data tergantung implementasi sistem manajemen basis data. Misalnya, pada MySQL, tipe data dapat berupa VARCHAR, TEXT, BLOB, ENUM, dan sebagainya.
+constraints adalah batasan-batasan yang diberikan untuk tiap kolom. Ini juga tergantung implementasi sistem manajemen basis data, misalnya NOT NULL, UNIQUE, dan sebagainya. Ini dapat digunakan untuk mendefinisikan kunci primer (primary key) dan kunci asing (foreign key).
+Satu tabel boleh tidak memiliki kunci primer sama sekali, namun sangat disarankan mendefinisikan paling tidak satu kolom sebagai kunci primer.
+
+Contoh:
+
+CREATE TABLE user
+ (
+ username VARCHAR(30) CONSTRAINT PRIMARY KEY,
+ passwd VARCHAR(20) NOT NULL,
+ tanggal_lahir DATETIME
+ );
+
+akan membuat tabel user seperti berikut:
+username	passwd	tanggal_lahir
+Data Manipulation Language[sunting | sunting sumber]
+DML digunakan untuk memanipulasi data yang ada dalam suatu tabel. Perintah yang umum dilakukan adalah:
+* SELECT untuk menampilkan data
+* INSERT untuk menambahkan data baru
+* UPDATE untuk mengubah data yang sudah ada
+* DELETE untuk menghapus data
+
+SELECT[sunting | sunting sumber]
+SELECT adalah perintah yang paling sering digunakan pada SQL, sehingga kadang-kadang istilah query dirujukkan pada perintah SELECT.SELECT digunakan untuk menampilkan data dari satu atau lebih tabel, biasanya dalam sebuah basis data yang sama. Secara umum, perintah SELECT memiliki bentuk lengkap:
+
+( QUERY BUDIN ) Cilegon.
+ SELECT [nama_tabel|alias.]nama_field1 [AS alias1] [, nama_field2, ...]
+ FROM nama_tabel1 [AS alias1] [INNER|LEFT|RIGHT JOIN tabel2 ON ''kondisi_penghubung'']
+ [, nama_tabel3 [AS alias3], ...]
+ [WHERE ''kondisi'']
+ [ORDER BY nama_field1 [ASC|DESC][, nama_field2 [ASC|DESC], ...]]
+ [GROUP BY nama_field1[, nama_field2, ...]]
+ [HAVING ''kondisi_aggregat'']
+
+dengan:
+* kondisi adalah syarat yang harus dipenuhi suatu data agar ditampilkan.
+* kondisi_aggregat adalah syarat khusus untuk fungsi aggregat.
+Kondisi dapat dihubungkan dengan operator logika, misalnya AND, OR, dan sebagainya.
+Contoh:
+Diasumsikan terdapat tabel user yang berisi data sebagai berikut.
+
+username	passwd	tanggal_lahir	jml_transaksi	total_transaksi
+Aris	6487AD5EF	09-09-1987	6	10.000
+Budi	97AD4erD	01-01-1994	0	0
+Charlie	548794654	06-12-1965	24	312.150
+Daniel	FLKH947HF	24-04-1980	3	0
+Erik	94RER54	17-08-1945	34	50.000
+
+Contoh 1: Tampilkan seluruh data.
+ SELECT *
+ FROM user
+
+Contoh 2: Tampilkan pengguna yang tidak pernah bertransaksi.
+ SELECT *
+ FROM user
+ WHERE total_transaksi = 0
+
+Contoh 3: Tampilkan username pengguna yang bertransaksi kurang dari 10 dan nilainya lebih dari 1.000.
+ SELECT username
+ FROM user
+ WHERE jml_transakai < 10 AND total_transaksi > 1000
+
+Contoh 4: Tampilkan total nominal transaksi yang sudah terjadi.
+ SELECT SUM(total_transaksi) AS total_nominal_transaksi
+ FROM user
+
+Contoh 5: Tampilkan seluruh data diurutkan berdasarkan jumlah transaksi terbesar ke terkecil.
+ SELECT *
+ FROM user
+ ORDER BY jml_transaksi DESC
+
+Fungsi aggregat[sunting | sunting sumber]
+Beberapa SMBD memiliki fungsi aggregat, yaitu fungsi-fungsi khusus yang melibatkan sekelompok data (aggregat). Secara umum fungsi aggregat adalah:
+* SUM untuk menghitung total nominal data
+* COUNT untuk menghitung jumlah kemunculan data
+* AVG untuk menghitung rata-rata sekelompok data
+* MAX dan MIN untuk mendapatkan nilai maksimum/minimum dari sekelompok data.
+Fungsi aggregat digunakan pada bagian SELECT. Syarat untuk fungsi aggregat diletakkan pada bagian HAVING, bukan WHERE.
+
+Subquery[sunting | sunting sumber]
+Adakalanya query dapat menjadi kompleks, terutama jika melibatkan lebih dari satu tabel dan/atau fungsi aggregat. Beberapa SMBD mengizinkan penggunaan subquery. Contoh:
+Tampilkan username pengguna yang memiliki jumlah transaksi terbesar.
+ SELECT username
+ FROM user
+ WHERE jml_transaksi =
+ (
+ 
+SELECT MAX(jml_transaksi)
+ FROM user
+ )
+
+INSERT[sunting | sunting sumber]
+Untuk menyimpan data dalam tabel digunakan sintaks:
+ INSERT INTO [NAMA_TABLE] ([DAFTAR_FIELD]) VALUES ([DAFTAR_NILAI])
+
+Contoh:
+ INSERT INTO TEST (NAMA, ALAMAT, PASSWORD) VALUES ('test', 'alamat', 'pass');
+
+UPDATE[sunting | sunting sumber]
+Untuk mengubah data menggunakan sintax:
+ UPDATE [NAMA_TABLE] SET [NAMA_KOLOM]=[NILAI] WHERE [KONDISI]
+Contoh:
+ UPDATE Msuser set password="123456" where username="abc"
+
+DELETE[sunting | sunting sumber]
+Untuk menghapus data dipergunakan sintaks:
+ DELETE FROM [nama_table] Where [KONDISI]
+Contoh:
+ DELETE FROM TEST WHERE NAMA='test';
