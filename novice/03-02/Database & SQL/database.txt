@@ -1,0 +1,68 @@
+Pangkalan data
+	Pangkalan data (disebut juga basis data; bahasa Inggris: database) adalah kumpulan data yang terorganisir, yang umumnya disimpan dan diakses secara elektronik dari suatu sistem komputer. Pada saat pangkalan data menjadi semakin kompleks, maka pangkalan data dikembangkan menggunakan teknik perancangan dan pemodelan secara formal.[1]
+	Perangkat lunak yang digunakan untuk mengelola dan memanggil kueri (query) basis data disebut sistem manajemen basis data (database management system, DBMS). Sistem basis data dipelajari dalam ilmu informasi.[2]
+	Istilah "basis data" berawal dari ilmu komputer. Meskipun kemudian artinya semakin luas, memasukkan hal-hal di luar bidang elektronika, artikel ini mengenai basis data komputer. Catatan yang mirip dengan basis data sebenarnya sudah ada sebelum revolusi industri yaitu dalam bentuk buku besar, kuitansi dan kumpulan data yang berhubungan dengan bisnis.[3]
+	Konsep dasar dari basis data adalah kumpulan dari catatan-catatan, atau potongan dari pengetahuan. Sebuah basis data memiliki penjelasan terstruktur dari jenis fakta yang tersimpan di dalamnya: penjelasan ini disebut skema. Skema menggambarkan objek yang diwakili suatu basis data, dan hubungan di antara objek tersebut. Ada banyak cara untuk mengorganisasi skema, atau memodelkan struktur basis data: ini dikenal sebagai model basis data atau model data. Model yang umum digunakan sekarang adalah model relasional, yang menurut istilah layman mewakili semua informasi dalam bentuk tabel-tabel yang saling berhubungan di mana setiap tabel terdiri dari baris dan kolom (definisi yang sebenarnya menggunakan terminologi matematika). Dalam model ini, hubungan antar tabel diwakili denga menggunakan nilai yang sama antar tabel. Model yang lain seperti model hierarkis dan model jaringan menggunakan cara yang lebih eksplisit untuk mewakili hubungan antar tabel.[4]
+
+Lingkungan basis data[sunting | sunting sumber]
+	Lingkungan basis data adalah sebuah habitat di mana terdapat basis data untuk bisnis. Dalam lingkungan basis data, pengguna memiliki alat untuk mengakses data. Pengguna melakukan semua tipe pekerjaan dan keperluan mereka bervariasi seperti menggali data (data mining),[5] memodifikasi data, atau berusaha membuat data baru. Masih dalam lingkungan basis data, pengguna tertentu tidak diperbolehkan mengakses data, baik secara fisik maupun logis. (Koh, 2005, dalam Janner Simarmata & Imam Paryudi 2006: 33).
+
+Tahapan perancangan basis data[sunting | sunting sumber]
+	Perancangan basis data merupakan upaya untuk membangun sebuah basis data dalam suatu lingkungan bisnis. Untuk membangun sebuah basis data terdapat tahapan-tahapan yang perlu kita lalui yaitu:[6]
+1. Perencanaan basis data
+2. Mendefinisikan sistem
+3. Analisis dan mengumpulkan kebutuhan
+4. Perancangan basis data
+5. Perancangan aplikasi
+6. Membuat prototipe
+7. Implementasi
+8. Konversi data
+9. Pengujian
+10. Pemeliharaan operasional
+
+Bahasa pada basis data[sunting | sunting sumber]
+	Terdapat tiga jenis bahasa komputer yang digunakan saat kita ingin membangun dan memanipulasi sebuah basis data, yaitu:
+1. Data Definition Language (DDL)
+2. Data Manipulation Language (DML)
+3. Data Control Language (DCL)
+
+Perangkat lunak basis data[sunting | sunting sumber]
+	Perangkat lunak basis data yang banyak digunakan dalam pemrograman dan merupakan perangkat basis data aras tinggi:[7]
+* Microsoft SQL Server
+* Oracle
+* Sybase
+* Interbase
+* XBase
+* Firebird
+* MySQL
+* PostgreSQL
+* Microsoft Access
+* dBase III
+* Paradox
+* FoxPro
+* Visual FoxPro
+* Arago
+* Force
+* Recital
+* dbFast
+* dbXL
+* Quicksilver
+* Clipper
+* FlagShip
+* Harbour
+* Visual dBase
+* Lotus Smart Suite Approach
+* db2
+* MongoDB
+Selain perangkat lunak di atas, terdapat juga perangkat lunak pemrograman basis data aras rendah, di antaranya:
+* Btrieve
+* Tsunami Record Manager
+
+Penyimpanan[sunting | sunting sumber]
+	Artikel utama: Penyimpanan data komputer dan Mesin pangkalan data
+Penyimpanan pangkalan data adalah wadah materialisasi fisik dari suatu pangkalan data. Penyimpanan terdiri dari penyimpanan tingkat internal (fisik) dalam arsitektur basis data. Penyimpanan ini juga berisikan semua informasi yang diperlukan (misalnya, metadata, "data tentang data", dan struktur data internal) untuk membangun tingkat konseptual dan tingkat eksternal dari tingkat internal pada saat dibutuhkan. Menempatkan data ke sistem penyimpanan permanen umumnya menjadi tugas mesin pangkalan data (disebut juga sebagai "mesin penyimpan data").[8] Meskipun pada umumnya penyimpanan pangkalan data diakses oleh DBMS (Database Manajemen Sistem) melalui sistem operasi yang mendasarinya (atau juga menggunakan sistem berkas dari sistem operasi perantara sebagai tata letak penyimpanan), properti dan pengaturan konfigurasi penyimpanan sangat penting dalam melakukan operasi DBMS yang efisien, sehingga perlu dijaga ketat oleh administrator pangkalan data.[9] Saat bekerja, DBMS selalu memiliki basis datanya dalam beberapa jenis penyimpanan (misal pada memori dan penyimpanan eksternal), selain itu terdapat empat jenis DBMS[10] yaitu:
+1.Relational DBMS.
+2.Hierarchical DBMS.
+3.Network DBMS.
+4.NoSQL.
+Data dalam pangkalan data beserta informasi tambahan yang dibutuhkan, yang dapat saja dalam ukuran yang sangat besar, dituliskan dalam kode menjadi bit. Data biasanya disimpan dalam struktur yang terlihat sangat berbeda dibandingkan dengan cara yang terlihat pada level konseptual dan eksternal, tetapi dalam upaya untuk mengoptimalkan (sebaik mungkin) rekonstruksi pada tingkat ini, agar ketika dibutuhkan oleh pengguna dan program, termasuk saat melakukan perhitungan informasi tambahan yang diperlukan dari data (misalnya, ketika melakukan kueri di basis data).[11]
