@@ -1,30 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collaps;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: lpx solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
 </head>
+
 <body>
     <div>
         <h1>Ini request</h1>
         <form action="" method="post">
-            <input name="nama" type="text">
-            <input name="detail" type="text">
+            <input name="nama" type="text"> <required>
+            <input name="detail" type="text"> <required>
             <button type="submit">kirim</button>
 
         </form>
 
         <hr>
         <h1>Ini response</h1>
-        {{context}}
         <br>
-        {% for d in context %}
-        <ul>
-            <li>{{d}}</li>
-        </ul>
-        {% endfor %}
+        <table>
+            <tr>
+                <th>id</th>
+                <th>nama</th>
+                <th>actions</th>
+            </tr>
+            {% for d in context %}
+            <tr>
+                <td>{{d[0]}}</td>
+                <td>{{d[1]}}</td>
+                <td>
+                    <a href="/detail/{{d[0]}}">
+                        detail
+                    </a>
+                    <a href="">
+                        update
+                    </a>
+                    <a href="/delete/{{d[0]}}">
+                        delete
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </body>
+
 </html>
