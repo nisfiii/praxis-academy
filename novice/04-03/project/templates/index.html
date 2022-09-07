@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Contoh Aplikasi Web Flask</title>
+    </head>
+    <body>
+            <h1>Halaman Utama</h1>
+            <form action="{{ url_for('predict') }}" method="post">
+                <label>Data 1: </label>
+                <input type="text" name="variable1" />
+                <label>Data 2: </label>
+                <input type="text" name="variable2" />
+                <button type="submit"> Hasil Jumlah </button>
+            </form>
+                <h1>Hasil Penjumlahan adalah </h1>
+                <h2> {{ hasil }}</h2>
+    </body>
+</html>
