@@ -15,16 +15,15 @@ class User(db.Model):
 @app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        username = request.form.get("usename")
+        username = request.form.get("username")
         email = request.form.get("email")
         input = User(username=username, email=email)
         db.session.add(input)
         db.session.commit() 
-        print(username, email)
-        
+        print(username,email)
+
     data = User.query.all()
-    print (data) 
-    return render_template("index.html") 
+    return render_template ("index.html", context=data) 
 
 if __name__ == "__main__":
     db.create_all()
